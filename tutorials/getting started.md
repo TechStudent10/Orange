@@ -8,7 +8,7 @@ git clone https://github.com/TechStudent11/Orange
 ```
 
 ## Step 2: Running apps
-I have provided an example file so I'll show you how to run. First, make sure you have Python installed. If you don't, go to https://python.org for steps on how to install.
+I have provided an example file so I'll show you how to run it. First, make sure you have Python installed. If you don't, go to https://python.org for steps on how to install.
 
 Now that you have Python installed, to run an Orange app (or a `.or` file), run the following command:
 ```bash
