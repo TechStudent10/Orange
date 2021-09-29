@@ -1,2 +1,5 @@
 *.pyc
 __pycache__/
+output/
+pyinstaller_beta.json
+venv/

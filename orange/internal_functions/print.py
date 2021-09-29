@@ -1,2 +1,2 @@
-def _print(*args, **kwargs):
-    print(*args, **kwargs)
+def _print(args):
+    print(' '.join(args))

@@ -1,10 +1,8 @@
-from . import constants
-
 from .internal_functions._get_value import get_value
-
-functions = constants.KEYWORDS
+from .keywords import KEYWORDS
 
 variables = {}
+functions = {}
 
 def parse(code):
     code_lines = code.split('\n')
@@ -14,19 +12,30 @@ def parse(code):
         if line == '':
             continue
         line_split = line.split(':')
-        # print(line_split)
         name = line_split[0]
+        if name.startswith('#'):
+            continue
+
         del line_split[0]
         val_not_convert = ':'.join(line_split)
+        args = val_not_convert.split(',')
+        new_args = []
+        for arg in args:
+            if arg.startswith(' '):
+                arg = arg[1:]
+
+            new_arg = get_value(arg, variables=variables, line_number=line_number)
+            new_args.append(new_arg)
+
+        
         if val_not_convert.startswith(' '):
             val_not_convert = val_not_convert[1:]
-        value = get_value(val_not_convert, line_number=line_number + 1, variables=variables)
-        # print("val", value)
-        if name in constants.KEYWORDS:
+        
+        val_not_convert = ',' + val_not_convert
+        if name in KEYWORDS:
             if name.startswith(' '):
                 name = name[1:]
             
-            if name == 'print':
-                functions['print'](value)
+            KEYWORDS[name](new_args)
         else:
-            variables[name] = value
+            variables[name] = ' '.join(new_args)
