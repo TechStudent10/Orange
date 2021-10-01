@@ -1,4 +1,4 @@
-from ._error import SyntaxError
+from ._error import SyntaxError, VariableNotFound
 
 def get_value(text, variables, line_number=0):
     if text == "":
@@ -20,5 +20,5 @@ def get_value(text, variables, line_number=0):
                 if text in variables:
                     return variables.get(text)
                 else:
-                    # return SyntaxError(line_number=line_number)
-                    return
+                    return VariableNotFound(line_number=line_number)
+                    # return

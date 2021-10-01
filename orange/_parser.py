@@ -36,6 +36,6 @@ def parse(code):
             if name.startswith(' '):
                 name = name[1:]
             
-            KEYWORDS[name](new_args)
+            KEYWORDS[name](new_args, variables=variables)
         else:
             variables[name] = ' '.join(new_args)

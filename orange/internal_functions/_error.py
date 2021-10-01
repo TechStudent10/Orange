@@ -19,3 +19,8 @@ class Error:
 class SyntaxError(Error):
     def __init__(self, message=None, line_number=None, *args, **kwargs):
         super().__init__(message or "Invalid Syntax", line_number or 1, *args, **kwargs)
+
+
+class VariableNotFound(Error):
+    def __init__(self, message=None, line_number=None, *args, **kwargs):
+        super().__init__(message or "Variable not found", line_number or 1, *args, **kwargs)
