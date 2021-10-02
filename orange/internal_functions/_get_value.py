@@ -20,5 +20,5 @@ def get_value(text, variables, line_number=0):
                 if text in variables:
                     return variables.get(text)
                 else:
-                    return VariableNotFound(line_number=line_number)
-                    # return
+                    # return VariableNotFound(line_number=line_number)
+                    return

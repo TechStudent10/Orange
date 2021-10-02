@@ -1,2 +1,8 @@
-var1: "yep"
-print: var1
+#print: 'oof'
+#print: 'no'
+
+function: eyyy (arg1, arg2)
+    print: "wass up"
+    print: "noting muchh"
+
+#execute: eyyy(), "var"

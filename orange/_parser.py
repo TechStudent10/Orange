@@ -1,10 +1,7 @@
 from .internal_functions._get_value import get_value
 from .keywords import KEYWORDS
 
-variables = {}
-functions = {}
-
-def parse(code):
+def parse(code, variables, functions):
     code_lines = code.split('\n')
 
     for line_number in range(len(code_lines)):
@@ -13,6 +10,7 @@ def parse(code):
             continue
         line_split = line.split(':')
         name = line_split[0]
+        # print(name)
         if name.startswith('#'):
             continue
 
@@ -36,6 +34,6 @@ def parse(code):
             if name.startswith(' '):
                 name = name[1:]
             
-            KEYWORDS[name](new_args, variables=variables)
+            KEYWORDS[name](args=new_args, variables=variables, lines=code_lines, line_number=line_number, functions=functions)
         else:
             variables[name] = ' '.join(new_args)

@@ -1,13 +1,22 @@
 from orange._parser import parse
 import sys
 import os
+import click
 
-filename = sys.argv[1]
-if os.path.exists(filename):
-    with open(filename, 'r') as f:
-        code = f.read()
-    
-    parse(code)
-    sys.exit()
+variables = {}
+functions = {}
 
-print('file not found')
+@click.command()
+@click.argument('filename')
+def run(filename):
+    if os.path.exists(filename):
+        with open(filename, 'r') as f:
+            code = f.read()
+        
+        parse(code, variables, functions)
+        sys.exit()
+
+    click.echo('file not found')
+
+if __name__ == '__main__':
+    run()

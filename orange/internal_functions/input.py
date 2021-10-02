@@ -1,4 +1,4 @@
-def _input(args, variables):
+def _input(args, variables, *args_, **kwargs):
     val = args[0]
     input_val = input(val)
 
