@@ -1,11 +1,10 @@
 # Getting started with Orange
 Orange is simple to setup.
 
-## Step 1: Clone this repository
-To clone it, first download Git using this link: https://git-scm.com/download. Next, clone the repository using the following command:
-```bash
-git clone https://github.com/TechStudent11/Orange
-```
+## Step 1: Installation
+You have two options for installation:
+1. [Pre-compiled version](precompile.md)
+2. [Compile it yourself](compile.md)
 
 ## Step 2: Running apps
 I have provided an example file so I'll show you how to run it. First, make sure you have Python installed. If you don't, go to https://python.org for steps on how to install.
