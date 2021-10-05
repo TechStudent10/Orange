@@ -38,7 +38,7 @@ python -m venv venv
 
 Then to activate it:
 ```
-source "venv/Scripts/activate"
+source "venv/bin/activate"
 ```
 
 ## Step 2: Dependencies
