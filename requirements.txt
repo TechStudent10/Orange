@@ -6,7 +6,7 @@ cffi==1.14.6
 click==8.0.1
 colorama==0.4.4
 Eel==0.12.4
-future==0.18.2
+future==0.18.3
 gevent==21.8.0
 gevent-websocket==0.10.1
 greenlet==1.1.1
